@@ -1,0 +1,50 @@
+{
+  "name": "react-timer",
+  "version": "1.0.0",
+  "description": "Simple react time",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start",
+    "start": "node server.js | webpack -w"
+  },
+  "author": "Gautam Naik",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.15.0",
+    "express": "^4.13.4",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^2.8.1",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.5.1",
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "deep-freeze-strict": "^1.1.1",
+    "expect": "^1.20.2",
+    "foundation-sites": "^6.2.4-rc2",
+    "jquery": "^3.1.1",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-mocha": "^1.2.0",
+    "karma-mocha-reporter": "^2.2.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.8.0",
+    "mocha": "^3.1.2",
+    "moment": "^2.15.2",
+    "node-sass": "^3.10.1",
+    "node-uuid": "^1.4.7",
+    "postcss-loader": "^1.0.0",
+    "react-addons-test-utils": "^0.14.8",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "sass-loader": "^4.0.2",
+    "script-loader": "^0.7.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.12.13"
+  }
+}
