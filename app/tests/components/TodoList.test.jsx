@@ -17,9 +17,16 @@ describe('TodoList', () => {
     });
 
     it('should render 1 todo component for each todo component', () => {
-        var todos = [{ id: 1, text: 'Do Something' }, { id: 2, text: 'Do Something else' }];
-        var todoList = TestUtils.renderIntoDocument(<TodoList todos={todos} />);
-        var todosComponents = TestUtils.scryRenderedComponentsWithType(todoList, Todo);
+        var todos = [{ id: 1, text: 'Do Something', completed: false, completedAt: undefined, createdAt: 200 },
+            { id: 2, text: 'Do Something else', completed: false, completedAt: undefined, createdAt: 200 }];
+        var store = configure({ todos });
+        var provider = TestUtils.renderIntoDocument(
+            <Provider store={store}>
+            <ConnectedTodoList/>
+            </Provider>
+        );
+        var todoList = TestUtils.scryRenderedComponentsWithType(provider, ConnectedTodoList)[0];
+        var todosComponents = TestUtils.scryRenderedComponentsWithType(todoList, ConnectedTodo);
 
         expect(todosComponents.length).toBe(todos.length);
     });
