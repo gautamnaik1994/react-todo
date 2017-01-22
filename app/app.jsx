@@ -7,14 +7,22 @@ var TodoApp=require('TodoApp');
 
 var actions = require('actions');
 var store = require('configureStore').configure();
+var TodoAPI = require('TodoAPI');
+
+// import './../playground/index.js';
 
 store.subscribe(() => {
-  console.log('New State ', store.getState());
+  var state = store.getState();
+  console.log('New State ', state);
+
+  TodoAPI.setTodos(state.todos);
 });
 
-store.dispatch(actions.addTodo('Clean yard'));
-store.dispatch(actions.setSearchText('yard'));
-store.dispatch(actions.toggleShowCompleted());
+var initialTodos = TodoAPI.getTodos();
+store.dispatch(actions.addTodos(initialTodos));
+// store.dispatch(actions.addTodo('Clean yard'));
+// store.dispatch(actions.setSearchText('yard'));
+// store.dispatch(actions.toggleShowCompleted());
 
 // require('foundation-sites/dist/foundation.min.css')
 
