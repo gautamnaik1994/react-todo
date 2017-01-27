@@ -1,6 +1,6 @@
 var webpack = require('webpack');
-var autoprefixer=require('autoprefixer');
-var path=require('path');
+var autoprefixer = require('autoprefixer');
+var path = require('path');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -17,9 +17,14 @@ module.exports = {
             '$': 'jquery',
             'jQuery': 'jquery'
         }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify('production')
+            }
+        }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
-                warnings:false
+                warnings: false
             }
         })
     ],
@@ -29,18 +34,18 @@ module.exports = {
     },
     resolve: {
         root: __dirname,
-        modulesDirectories:[
+        modulesDirectories: [
             'node_modules',
             './app/components',
             './app/api'
         ],
         alias: {
-            app:'app',
+            app: 'app',
             Main: 'app/components/Main.jsx',
             applicationStyles: 'app/styles/app.scss',
             actions: 'app/actions/actions.jsx',
             reducers: 'app/reducers/reducers.jsx',
-            configureStore:'app/store/configureStore.jsx'
+            configureStore: 'app/store/configureStore.jsx'
         },
         extensions: ['', '.js', '.jsx']
     },
@@ -61,12 +66,14 @@ module.exports = {
         }],
 
     },
-    postcss:[autoprefixer({broser:['last 2 versions']})],
-    sassLoader:{
-        outputStyle:"compressed",
-        includePaths:[
-            path.resolve(__dirname,'./node_modules/foundation-sites/scss')
+    postcss: [autoprefixer({
+        broser: ['last 2 versions']
+    })],
+    sassLoader: {
+        outputStyle: "compressed",
+        includePaths: [
+            path.resolve(__dirname, './node_modules/foundation-sites/scss')
         ]
     },
-    devtool: process.env.NODE_ENV==='production' ? undefined : 'eval-source-map'
+    devtool: process.env.NODE_ENV === 'production' ? undefined : 'eval-source-map'
 };
