@@ -2,6 +2,8 @@ var webpack = require('webpack');
 var autoprefixer=require('autoprefixer');
 var path=require('path');
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 module.exports = {
     entry: ['script!jquery/dist/jquery.min.js',
         'script!foundation-sites/dist/foundation.min.js',
@@ -14,6 +16,11 @@ module.exports = {
         new webpack.ProvidePlugin({
             '$': 'jquery',
             'jQuery': 'jquery'
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings:false
+            }
         })
     ],
     output: {
@@ -61,5 +68,5 @@ module.exports = {
             path.resolve(__dirname,'./node_modules/foundation-sites/scss')
         ]
     },
-    devtool: 'eval-source-map'
+    devtool: process.env.NODE_ENV==='production' ? undefined : 'eval-source-map'
 };

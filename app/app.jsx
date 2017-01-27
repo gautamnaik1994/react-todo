@@ -11,21 +11,22 @@ var TodoAPI = require('TodoAPI');
 
 // import './../playground/index.js';
 
-store.subscribe(() => {
-  var state = store.getState();
-  console.log('New State ', state);
+// store.subscribe(() => {
+//   var state = store.getState();
+//   console.log('New State ', state);
 
-  TodoAPI.setTodos(state.todos);
-});
+//   TodoAPI.setTodos(state.todos);
+// });
 
-var initialTodos = TodoAPI.getTodos();
-store.dispatch(actions.addTodos(initialTodos));
+// var initialTodos = TodoAPI.getTodos();
+// store.dispatch(actions.addTodos(initialTodos));
 // store.dispatch(actions.addTodo('Clean yard'));
 // store.dispatch(actions.setSearchText('yard'));
 // store.dispatch(actions.toggleShowCompleted());
 
 // require('foundation-sites/dist/foundation.min.css')
 
+store.dispatch(actions.startAddTodos());
 
 require('applicationStyles')
 $(document).foundation();

@@ -10,42 +10,42 @@ describe('TodoAPI', () => {
         expect(TodoAPI).toExist();
     });
 
-    describe('setTodos', () => {
-        it('should set valid todo array', () => {
-            var todos = [{
-                id: 23, test: 'test all files', completed: false
-            }];
-            TodoAPI.setTodos(todos);
+    // describe('setTodos', () => {
+    //     it('should set valid todo array', () => {
+    //         var todos = [{
+    //             id: 23, test: 'test all files', completed: false
+    //         }];
+    //         TodoAPI.setTodos(todos);
 
-            var actualTodos = JSON.parse(localStorage.getItem('todos'));
+    //         var actualTodos = JSON.parse(localStorage.getItem('todos'));
 
-            expect(actualTodos).toEqual(todos);
-        });
+    //         expect(actualTodos).toEqual(todos);
+    //     });
 
-        it('should not set invalid array', () => {
-            var badTodos = { a: 'b' };
-            TodoAPI.setTodos(badTodos);
+    //     it('should not set invalid array', () => {
+    //         var badTodos = { a: 'b' };
+    //         TodoAPI.setTodos(badTodos);
 
-            expect(localStorage.getItem('todos')).toBe(null);
-        });
-    });
+    //         expect(localStorage.getItem('todos')).toBe(null);
+    //     });
+    // });
 
-    describe('getTodos', () => {
-        it('should return empty array when get todos is called for first time', () => {
-            var actualTodos = TodoAPI.getTodos();
+    // describe('getTodos', () => {
+    //     it('should return empty array when get todos is called for first time', () => {
+    //         var actualTodos = TodoAPI.getTodos();
 
-            expect(actualTodos).toEqual([]);
-        });
-        it('should return full  array when get todos is called', () => {
-            var todos = [{
-                id: 23, test: 'test all files', completed: false
-            }];
-            localStorage.setItem('todos', JSON.stringify(todos));
-            var actualTodos = TodoAPI.getTodos();
-            expect(actualTodos).toEqual(todos);
-        });
+    //         expect(actualTodos).toEqual([]);
+    //     });
+    //     it('should return full  array when get todos is called', () => {
+    //         var todos = [{
+    //             id: 23, test: 'test all files', completed: false
+    //         }];
+    //         localStorage.setItem('todos', JSON.stringify(todos));
+    //         var actualTodos = TodoAPI.getTodos();
+    //         expect(actualTodos).toEqual(todos);
+    //     });
 
-    });
+    // });
 
     describe('filterTodos', () => {
         var todos = [{
