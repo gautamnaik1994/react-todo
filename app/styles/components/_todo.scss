@@ -11,19 +11,18 @@
     >:first-child {
         margin-right: 1rem;
     }
-
-    &:hover{
+    &:hover {
         background: #f0f0f0;
     }
 }
 
-.todo__subtext{
+.todo__subtext {
     color: #999;
-
 }
 
-.todo-completed{
-    p,.todo__subtext{
+.todo-completed {
+    p,
+    .todo__subtext {
         color: $light-color;
         text-decoration: line-through;
     }

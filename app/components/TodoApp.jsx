@@ -52,7 +52,7 @@ var TodoApp = React.createClass({
     //         searchText: searchText.toLowerCase()
     //     });
     // },
-    render:function() {
+    render: function () {
         // var {todos, showCompleted, searchText} = this.state;
         // var filteredTodos = TodoAPI.filterTodos(todos, showCompleted, searchText);
         return (
