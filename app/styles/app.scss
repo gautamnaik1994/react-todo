@@ -1,13 +1,9 @@
 @import "base/variables.scss";
-
- @import "base/foundation-settings.scss";
+@import "base/foundation-settings.scss";
 @import "foundation";
-
- @include foundation-everything(true);
-
+@include foundation-everything(true);
 @import "components/container.scss";
 @import "components/page-title.scss";
-
 @import "components/todo.scss";
-
-
+@import "components/page-actions.scss";
+@import "components/callout-auth.scss";

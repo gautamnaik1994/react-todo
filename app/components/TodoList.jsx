@@ -32,5 +32,5 @@ export var TodoList = React.createClass({
 export default connect(
     (state) => {
         return state;
-}
+    }
 )(TodoList);
