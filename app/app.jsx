@@ -28,7 +28,7 @@ import Login from 'Login';
 
 store.dispatch(actions.startAddTodos());
 
-require('applicationStyles')
+
 $(document).foundation();
 
 ReactDOM.render(
